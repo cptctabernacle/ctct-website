@@ -1,7 +1,7 @@
 backend:
   name: github
   # TODO - confirm this is the exact GitHub repo Cloudflare Pages deploys from
-  repo: cpchristiantabermacle/ctcp-christiantabernacle
+  repo: cpchristiantabermacle/ctct-website
   branch: main
   # TODO - replace with your real live domain (no trailing slash)
   base_url: https://capetownchristiantabernacle.co.za
