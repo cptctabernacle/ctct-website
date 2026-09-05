@@ -20,6 +20,11 @@
       "series": "Sunday Service",
       "date": "2026-07-12",
       "audioUrl": "https://jsdelivr.net"
+    },
+    {
+      "audioUrl": "assets/sermons/Paul Lufulwabo__%Thirst_09_07_Sun_140218.mp3",
+      "title": "Thirst",
+      "preacher": "Brother Paul Lufulwabo"
     }
   ]
 }
