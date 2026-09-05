@@ -1,0 +1,27 @@
+{
+  "preacherOfTheWeek": {
+    "name": "Brother Jacques Tshinyoka",
+    "topic": "The Harvest",
+    "date": "Sun 2 Aug · 11:00"
+  },
+  "items": [
+    {
+      "title": "Building Fund - Building Update",
+      "date": "2026-07-24",
+      "pinned": true,
+      "body": "Thank you for your continued giving toward the sanctuary roof repairs. We're still working toward reaching our goal - see trustees for the details."
+    },
+    {
+      "title": "Midweek Prayer Meeting",
+      "date": "2026-07-20",
+      "pinned": false,
+      "body": "Join us Tuesdays and Thursdays, 18:00-20:00, for prayer and the Word. All welcome."
+    },
+    {
+      "title": "Choir Registration Open",
+      "date": "2026-07-14",
+      "pinned": false,
+      "body": "Registration for the youth joining instruments lessons is now open. Speak to song leader or come to the practice any Saturday 14:00."
+    }
+  ]
+}

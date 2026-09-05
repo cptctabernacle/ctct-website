@@ -1,0 +1,25 @@
+{
+  "sermons": [
+    {
+      "title": "The Harvest",
+      "preacher": "Brother Jacques Tshinyoka",
+      "series": "Sunday Service",
+      "date": "2026-07-19",
+      "audioUrl": "https://raw.githubusercontent.com/YOUR-ORG/ctct-sermons/main/2026/2026-07-19-the-harvest.mp3"
+    },
+    {
+      "title": "Walking in the Spirit",
+      "preacher": "Pastor S. Marrion",
+      "series": "Midweek Word",
+      "date": "2026-07-16",
+      "audioUrl": "https://raw.githubusercontent.com/YOUR-ORG/ctct-sermons/main/2026/2026-07-16-walking-in-the-spirit.mp3"
+    },
+    {
+      "title": "Faith That Overcomes",
+      "preacher": "Brother Joseph Jadika",
+      "series": "Sunday Service",
+      "date": "2026-07-12",
+      "audioUrl": "https://jsdelivr.net"
+    }
+  ]
+}

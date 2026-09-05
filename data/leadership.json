@@ -1,0 +1,22 @@
+{
+  "leaders": [
+    {
+      "name": "Pastor Jose Kamonga",
+      "role": "Senior Pastor",
+      "bio": "Pastor Jose has been leading Cape Town Christian Tabernacle since its creation, he is the head Pastor. He has a heart for the work and people of God and lives to serve",
+      "photo": "assets/leaders/jose-kamonga.JPG"
+    },
+    {
+      "name": "Pastor Daniel Kabamba",
+      "role": "Associate Pastor",
+      "bio": "Pastor Daniel has been serving on this role for 2 years, he previously filled in the role of head of the deacon board position. He has a heart to serve always ready to help",
+      "photo": "assets/leaders/daniel-kabamba.JPG"
+    },
+    {
+      "name": "Pastor Luc Yav",
+      "role": "Associate Pastor",
+      "bio": "Pastor Luc has been serving on this role for 2 years, he previously filled in the role of a treasurer for years. He has a heart to serve always ready to help",
+      "photo": "assets/leaders/luc-yav.JPG"
+    }
+  ]
+}
