@@ -1,0 +1,28 @@
+{
+  "schedule": [
+    {
+      "time": "11:00 - 15:00",
+      "day": "Sunday",
+      "program": "Sunday Service (Live)",
+      "host": "Brother Jacques Tshinyoka"
+    },
+    {
+      "time": "18:00 - 20:00",
+      "day": "Tuesday",
+      "program": "Midweek Word & Prayer",
+      "host": "Pastor S. Marrion"
+    },
+    {
+      "time": "18:00 - 20:00",
+      "day": "Thursday",
+      "program": "Midweek Word & Prayer",
+      "host": "Pastor S. Marrion"
+    },
+    {
+      "time": "Daily",
+      "day": "Mon-Sat",
+      "program": "Sermon Replays",
+      "host": "Automated playlist"
+    }
+  ]
+}

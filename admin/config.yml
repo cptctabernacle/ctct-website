@@ -1,0 +1,106 @@
+backend:
+  name: github
+  # TODO - confirm this is the exact GitHub repo Cloudflare Pages deploys from
+  repo: cpchristiantabermacle/radio
+  branch: main
+  # TODO - replace with your real live domain (no trailing slash)
+  base_url: https://capetownchristiantabernacle.co.za
+  auth_endpoint: api/auth
+
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+
+collections:
+  - name: "announcements"
+    label: "Announcements & Preacher of the Week"
+    files:
+      - file: "data/announcements.json"
+        label: "Announcements"
+        name: "announcements"
+        fields:
+          - label: "Preacher of the Week"
+            name: "preacherOfTheWeek"
+            widget: "object"
+            fields:
+              - { label: "Name (leave blank to auto-pull the latest YouTube video instead)", name: "name", widget: "string", required: false }
+              - { label: "Topic", name: "topic", widget: "string", required: false }
+              - { label: "Date / time text (e.g. 'Sun 2 Aug - 11:00')", name: "date", widget: "string", required: false }
+          - label: "Announcement items"
+            name: "items"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "date", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "Pinned (shown first)", name: "pinned", widget: "boolean", default: false }
+              - { label: "Body", name: "body", widget: "text" }
+
+  - name: "sermons"
+    label: "Sermons"
+    files:
+      - file: "data/sermons.json"
+        label: "Sermon Library"
+        name: "sermons"
+        fields:
+          - label: "Sermons"
+            name: "sermons"
+            widget: "list"
+            summary: "{{title}} - {{fields.preacher}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Preacher", name: "preacher", widget: "string" }
+              - { label: "Series", name: "series", widget: "string", required: false }
+              - { label: "Date", name: "date", widget: "date", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "Audio URL (GitHub raw link, or R2 link)", name: "audioUrl", widget: "string" }
+
+  - name: "events"
+    label: "Events"
+    files:
+      - file: "data/events.json"
+        label: "Events Calendar"
+        name: "events"
+        fields:
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            summary: "{{title}} - {{fields.date}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "date", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "Time", name: "time", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Details", name: "body", widget: "text" }
+
+  - name: "leadership"
+    label: "Leadership"
+    files:
+      - file: "data/leadership.json"
+        label: "Leadership Team"
+        name: "leadership"
+        fields:
+          - label: "Leaders"
+            name: "leaders"
+            widget: "list"
+            summary: "{{name}} - {{fields.role}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", media_folder: "/assets/leaders", public_folder: "/assets/leaders", required: false }
+
+  - name: "schedule"
+    label: "Radio Schedule"
+    files:
+      - file: "data/schedule.json"
+        label: "Radio Program Schedule"
+        name: "schedule"
+        fields:
+          - label: "Schedule rows"
+            name: "schedule"
+            widget: "list"
+            summary: "{{day}} {{time}} - {{fields.program}}"
+            fields:
+              - { label: "Day", name: "day", widget: "string" }
+              - { label: "Time", name: "time", widget: "string" }
+              - { label: "Program", name: "program", widget: "string" }
+              - { label: "Host", name: "host", widget: "string" }

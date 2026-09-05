@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Radio - Cape Town Christian Tabernacle</title>
+<meta name="description" content="Listen live to Cape Town Christian Tabernacle Radio, 24/7.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Live Radio - Cape Town Christian Tabernacle">
+<meta property="og:description" content="Listen live to Cape Town Christian Tabernacle Radio, 24/7.">
+<meta property="og:image" content="https://capetownchristiantabernacle.co.za/assets/og-share.jpg">
+<meta property="og:url" content="https://capetownchristiantabernacle.co.za/radio.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Live Radio - Cape Town Christian Tabernacle">
+<meta name="twitter:description" content="Listen live to Cape Town Christian Tabernacle Radio, 24/7.">
+<meta name="twitter:image" content="https://capetownchristiantabernacle.co.za/assets/og-share.jpg">
+<meta name="theme-color" content="#0B1330">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css?v=6">
+</head>
+<body class="radio-page">
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><img src="assets/logo-white.png" alt="Cape Town Christian Tabernacle"></span>
+      <span class="brand-text visually-hidden">Cape Town Christian Tabernacle</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="live.html">Live</a>
+      <a href="sermons.html">Sermons</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="events.html">Events</a>
+      <a href="radio.html" class="active">Radio</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button">About</button>
+        <div class="nav-dropdown-menu">
+          <a href="leadership.html">Leadership</a>
+          <a href="contact.html">Contact &amp; Prayer</a>
+        </div>
+      </div>
+      <a href="give.html" class="btn btn-primary nav-give">Give</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="radio-hero">
+  <div class="container">
+    <div class="station-id">CTCT Radio · 24/7</div>
+    <h1 style="margin-top:8px;">The Word, always on air.</h1>
+
+    <div class="player-card">
+      <span class="live-badge" id="live-badge" style="display:none;"><span class="pulse"></span> LIVE</span>
+      <div class="now-playing-art" id="np-art">📻</div>
+      <div class="np-title" id="np-title">Press play to connect</div>
+      <div class="np-sub" id="np-sub">Cape Town Christian Tabernacle Radio</div>
+
+      <div class="equalizer paused" id="equalizer">
+        <i></i><i></i><i></i><i></i><i></i>
+      </div>
+
+      <div class="transport">
+        <button class="play-btn" id="play-btn" aria-label="Play radio stream">▶</button>
+      </div>
+
+      <div class="vol-row">
+        🔊 <input type="range" id="vol-slider" min="0" max="100" value="80">
+      </div>
+
+      <!-- Quality selector hidden for now - only one real mount (/stream) exists.
+           Add real high/low bitrate mounts in Icecast, update RADIO_CONFIG in
+           radio.js, then remove style="display:none" below to bring it back. -->
+      <div class="quality-row" style="margin-top:18px;display:none;">
+        <button data-quality="64">64 kbps</button>
+        <button data-quality="128" class="active">128 kbps</button>
+        <button data-quality="320">320 kbps</button>
+      </div>
+
+      <div class="stat-row">
+        <div><b id="listener-count">-</b>Listeners</div>
+        <div><b>24/7</b>On air</div>
+        <div><b>HTTPS</b>Secure stream</div>
+      </div>
+
+      <div class="presenter-strip">
+        <img src="assets/preacher-placeholder.png" alt="" onerror="this.style.display='none'">
+        <div style="text-align:left;">
+          <div style="font-weight:600;">This week's voice</div>
+          <div style="font-size:.82rem;color:var(--gray-soft);">Brother Jacques Tshinyoka</div>
+        </div>
+      </div>
+
+      <audio id="radio-audio" preload="none"></audio>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:720px;">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> This week</div>
+        <h2>Program schedule</h2>
+      </div>
+    </div>
+    <table class="schedule-table">
+      <thead><tr><th>Time</th><th>Day</th><th>Program</th><th>Host</th></tr></thead>
+      <tbody id="schedule-body">
+        <tr><td colspan="4" class="state-msg">Loading schedule…</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section section-mist" style="background:rgba(255,255,255,0.03);">
+  <div class="container" style="max-width:640px;">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Listener chat</div>
+        <h2>Say hello</h2>
+        <p>A simple demo chat for now - connect it to a small backend to make it live across all listeners (see README).</p>
+      </div>
+    </div>
+    <div class="chat-box">
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-msg"><b>System:</b> Welcome to CTCT Radio chat 👋</div>
+      </div>
+      <form class="chat-form" id="chat-form">
+        <input type="text" placeholder="Type a message…" maxlength="200">
+        <button class="btn btn-red" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span class="footer-brand"><img src="assets/logo-white.png" alt="Cape Town Christian Tabernacle"> <span>© 2026</span></span>
+    <span><a href="leadership.html">Leadership</a> · <a href="events.html">Events</a> · <a href="contact.html">Contact</a> · <a href="give.html">Give</a></span>
+    <span><a href="mailto:info@christiantabernacle.co.za">info@christiantabernacle.co.za</a> · +27 82 964 4373</span>
+  </div>
+</footer>
+
+<button class="mode-toggle" id="mode-toggle" aria-label="Toggle light/dark mode">☀️</button>
+
+<script src="assets/js/main.js?v=8"></script>
+<script src="assets/js/radio.js?v=9"></script>
+</body>
+</html>
